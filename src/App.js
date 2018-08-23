@@ -3,7 +3,7 @@ import { Schema } from '@dhl-parcel/dhl-parcel-upload-form';
 import { Grid, Cell, DialogContainer, Snackbar, List, ListItem } from 'react-md';
 
 import { keys, mandatoryFields, fields, schemas as defaultSchemas } from './constants';
-import { customTranslate, returnInput } from './services';
+import { customTranslate, getRegexForFieldName, returnInput } from './services';
 import logo from './logo.svg';
 import './App.css';
 
@@ -58,9 +58,9 @@ export default class App extends Component {
                   setMapping={(arr) => this.setState({ result: arr })}
                   tr={customTranslate}
                   demo={schemas}
-                  depends={{}}
+                  depends={{ telephone2: 'telephone' }}
                   normalize={returnInput}
-                  getRegexForField={() => null}
+                  getRegexForField={getRegexForFieldName}
                   showToastMessage={str => this.addToast(str)}
                   postSchemas={(arr, mapping, name, category) =>
                     Promise.resolve(

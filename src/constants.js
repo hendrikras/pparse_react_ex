@@ -28,5 +28,6 @@ export const keys = {
   next: 'next',
 };
 
-export const mandatoryFields = ['organisation', 'firstname', 'lastname'];
-export const fields = mandatoryFields.concat(['occupation', 'age', 'telephone']);
+export const mandatoryFields = ['firstname', 'lastname', 'organisation'];
+
+export const fields = mandatoryFields.concat(['occupation', 'age', 'quote', 'telephone', 'telephone2']);
