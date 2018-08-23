@@ -1,0 +1,44 @@
+@mixin make-grid($number) {
+  @for $i from 1 through $number {
+
+    .o-grid__item--#{$i}{
+      grid-column: span #{$i};
+    }
+  }
+
+  @each $key, $value in $breakpoints {
+    @include bp($key) {
+      @for $i from 1 through $number {
+
+        .o-grid__item--#{$i}-#{$key} {
+          grid-column: span #{$i};
+        }
+      }
+    }
+  }
+}
+
+/* Make a grid Column template
+ClassName: .o-grid--1|12
+*/
+
+@include make-grid(12);
+.o-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto;
+  grid-gap: 1rem;
+}
+
+.o-grid--1-2 {
+  grid-template-columns: 33% 66%;
+  grid-template-rows: auto;
+  grid-column-gap: 1.5rem;
+}
+
+.o-grid--1-4 {
+  grid-template-columns: 25% 75%;
+  grid-template-rows: auto;
+  grid-column-gap: 1.5rem;
+}
+

@@ -1,0 +1,9 @@
+@import 'react-md/src/scss/react-md';
+@import "./scss/align";
+@import "./scss/breakpoints";
+@import "./scss/o-grid";
+@import "./scss/grid";
+
+// Variable overrides
+$md-primary-color: $md-teal-500;
+$md-secondary-color: $md-purple-a-400;

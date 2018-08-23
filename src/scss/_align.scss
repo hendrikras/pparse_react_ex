@@ -1,0 +1,15 @@
+.h-align{
+  &--right{
+    text-align: right;
+  }
+  &--left {
+    text-align: left;
+  }
+  &--center {
+    text-align: center;
+  }
+}
+
+.h-flex--end {
+  justify-content: flex-end !important;
+}

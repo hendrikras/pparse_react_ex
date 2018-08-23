@@ -1,0 +1,22 @@
+
+.o-grid {
+  display: grid;
+
+  &--spaced {
+    grid-column-gap: 3rem;
+  }
+
+  &--column-2 {
+    grid-template-columns: 1fr;
+
+    @media (min-width: $md-grid-tablet-breakpoint) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__item--span-2 {
+    grid-column-start: span 2;
+  }
+
+}
+
