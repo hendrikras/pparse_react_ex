@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { expect } from 'chai';
 import App from './App';
-import { getRegexForFieldName, returnInput, customTranslate } from './services';
+import { getRegexForFieldName, customTranslate } from './services';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');

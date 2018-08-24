@@ -18,9 +18,9 @@ export function customTranslate(string) {
 export function getRegexForFieldName(field) {
   switch (field) {
     case 'age':
-      return /\s[0-1]{1}[0-9]{0,2}/;
+      return /^[0-9]*$/;
     case 'telephone': case 'telephone2':
-      return /^[0-9]{0,10}/;
+      return /^[0-9]{10}$/;
     default:
       return null;
   }

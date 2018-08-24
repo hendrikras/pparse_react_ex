@@ -52,6 +52,7 @@ export default class App extends Component {
                   fields={fields}
                   getSchemas={() => Promise.resolve(schemas)} // the component expects a promise
                   setMapping={(arr) => this.setState({ result: arr })}
+                  normalize={(str, char, val) => val.trim()}
                   tr={customTranslate}
                   demo={schemas}
                   depends={{ telephone2: 'telephone' }}
