@@ -9,10 +9,6 @@ it('renders without crashing', () => {
   ReactDOM.render(<App />, div);
 });
 
-it('mocks input', () => {
-  expect(returnInput('test')).to.equal('test');
-});
-
 it('gets regex for field', () => {
   expect(getRegexForFieldName('telephone2').test('0987654321')).to.equal(true);
 });

@@ -20,14 +20,6 @@ export const schemas = [{
 },
 ];
 
-export const keys = {
-  fileAborted: 'Oops!',
-  importName: 'Import CSV',
-  importDescription: 'Upload a (example) csv',
-  fileSelect: 'select file',
-  next: 'next',
-};
-
 export const mandatoryFields = ['firstname', 'lastname', 'organisation'];
 
 export const fields = mandatoryFields.concat(['occupation', 'age', 'quote', 'telephone', 'telephone2']);

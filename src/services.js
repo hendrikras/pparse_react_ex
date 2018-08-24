@@ -15,8 +15,6 @@ export function customTranslate(string) {
   }
 }
 
-export const returnInput = str => str;
-
 export function getRegexForFieldName(field) {
   switch (field) {
     case 'age':

@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Schema } from '@dhl-parcel/dhl-parcel-upload-form';
 import { Grid, Cell, DialogContainer, Snackbar, List, ListItem } from 'react-md';
 
-import { keys, mandatoryFields, fields, schemas as defaultSchemas } from './constants';
-import { customTranslate, getRegexForFieldName, returnInput } from './services';
+import { mandatoryFields, fields, schemas as defaultSchemas } from './constants';
+import { customTranslate, getRegexForFieldName } from './services';
 import logo from './logo.svg';
 import './App.css';
 
@@ -48,26 +48,15 @@ export default class App extends Component {
               <Cell size={3} />
               <Cell size={5}>
                 <Schema
-                  type="demo"
-                  category="demo"
                   mandatoryFields={mandatoryFields}
                   fields={fields}
-                  getTranslationMapping={returnInput}
-                  translationKeys={keys}
                   getSchemas={() => Promise.resolve(schemas)} // the component expects a promise
                   setMapping={(arr) => this.setState({ result: arr })}
                   tr={customTranslate}
                   demo={schemas}
                   depends={{ telephone2: 'telephone' }}
-                  normalize={returnInput}
                   getRegexForField={getRegexForFieldName}
                   showToastMessage={str => this.addToast(str)}
-                  postSchemas={(arr, mapping, name, category) =>
-                    Promise.resolve(
-                      this.setState({
-                        schemas: schemas.concat([{ name, category, matches: mapping }]),
-                      })
-                    )}
                 />
               </Cell>
             </Grid>
